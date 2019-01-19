@@ -1,0 +1,42 @@
+﻿@model HelloWebApi2018.Models.Person
+
+<div>
+    @Html.Partial("_Person", Model)
+</div>
+
+
+<h2>Person from Ajax</h2>
+<div class="container" id="person">
+
+</div>
+
+<div class="container" id="person2">
+
+
+</div>
+<button class="btn btn-danger" id="btnLoad">Get Person</button>
+<button class="btn btn-danger" id="btnLoadJson">Get Person</button>
+
+@section scriptsOrest{
+    <script>
+        //$(".container").html("Orest is a nice guy")
+
+        $("#btnLoad").on("click",
+            function () {
+                $.ajax("/home/index2").done(function (data) {
+                    $("#person").html(data);
+                });
+            });
+
+        $("#btnLoadJson").on("click", function () {
+            $.ajax("/home/IndexJson").done(function (data) {
+                $("#person2").html(data);
+            })
+        })
+
+
+            //
+
+    </script>
+
+}

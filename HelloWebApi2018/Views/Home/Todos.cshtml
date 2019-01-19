@@ -1,0 +1,35 @@
+﻿
+<link href="~/Content/base.css" rel="stylesheet" />
+
+<section id="todoapp">
+    <header id="header">
+        <h1>todos</h1>
+        <input id="new-todo" placeholder="What needs to be done?" autofocus>
+    </header>
+    <section id="main">
+        <input id="toggle-all" type="checkbox">
+        <label for="toggle-all">Mark all as complete</label>
+        <ul id="todo-list"></ul>
+    </section>
+    <footer id="footer">
+        <span id="todo-count"><strong><span id="activeTodoCount"></span> </strong> items left</span>
+
+        <button id="clear-completed">Clear completed </button>
+    </footer>
+</section>
+
+
+
+
+<div class="view item-template">
+    <input type="checkbox" class="toggle">
+    <label>walk the dog</label>
+    <input type="text" class="edit-input" style="display: none;">
+    <button index="0" class="destroy"></button>
+</div>
+
+
+@section scripts
+{
+    <script src="~/js/todo.js"></script>
+}

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWebApi2018", "HelloWebApi2018\HelloWebApi2018.csproj", "{80806FAD-E839-4F79-8D1E-88D1092899D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWebApi2018.Tests", "HelloWebApi2018.Tests\HelloWebApi2018.Tests.csproj", "{1E2586CA-523B-4DC1-B4A7-236CA5FF864E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80806FAD-E839-4F79-8D1E-88D1092899D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80806FAD-E839-4F79-8D1E-88D1092899D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80806FAD-E839-4F79-8D1E-88D1092899D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80806FAD-E839-4F79-8D1E-88D1092899D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E2586CA-523B-4DC1-B4A7-236CA5FF864E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E2586CA-523B-4DC1-B4A7-236CA5FF864E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E2586CA-523B-4DC1-B4A7-236CA5FF864E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E2586CA-523B-4DC1-B4A7-236CA5FF864E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6D45180B-1D1D-455B-9A86-AE9AAD43EFC5}
+	EndGlobalSection
+EndGlobal
