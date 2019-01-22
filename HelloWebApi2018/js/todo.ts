@@ -15,7 +15,7 @@ module app {
         todoList;
         todoItemTemplate: any;
         activeTodoCount;
-        newTodo: any
+        newTodo: any;
         constructor(private applicationEl) {
             this.todoList = applicationEl.find("#todo-list");
             this.todoItemTemplate = $(".item-template").clone().removeClass("item-template");
@@ -37,6 +37,7 @@ module app {
 
         initApplicationEvents() {
             this.newTodo.on("keypress", (event) => this.onNewTodoKeyPress(event));
+            //this.todoList.on("blur",".edit-input", (event) => this.todoEditInputOnBlur(event));
         }
 
         onNewTodoKeyPress(event) {
@@ -45,6 +46,9 @@ module app {
                 this.createTodo();
             }
         }
+        //todoEditInputOnBlur(event) { 
+        //    $(event.target).hide().parent().find("label").show();
+        //}
 
         createTodo() {
             var todo = new Todo();
@@ -69,7 +73,19 @@ module app {
 
         renderTodo(todo) {
             var divView = this.todoItemTemplate.clone();
-            divView.find("label").text(todo.title);
+            divView.data("id", todo.id);
+
+            divView.find("label").text(todo.title).on("dblclick", function () {
+                var label = $(this);
+                var id = label.parent().data("id");
+                label.hide();
+                label.parent().find(".edit-input").val(label.text()).show();
+
+            });
+            divView.find(".edit-input").on("blur", function () {
+                $(this).hide().parent().find("label").show();
+            });
+
             var li = $("<li/>");
             li.append(divView);
             li.appendTo(this.todoList);

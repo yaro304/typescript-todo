@@ -27,12 +27,16 @@ var app;
         TodoApp.prototype.initApplicationEvents = function () {
             var _this = this;
             this.newTodo.on("keypress", function (event) { return _this.onNewTodoKeyPress(event); });
+            //this.todoList.on("blur",".edit-input", (event) => this.todoEditInputOnBlur(event));
         };
         TodoApp.prototype.onNewTodoKeyPress = function (event) {
             if (event.which === 13) {
                 this.createTodo();
             }
         };
+        //todoEditInputOnBlur(event) { 
+        //    $(event.target).hide().parent().find("label").show();
+        //}
         TodoApp.prototype.createTodo = function () {
             var _this = this;
             var todo = new Todo();
@@ -54,7 +58,16 @@ var app;
         };
         TodoApp.prototype.renderTodo = function (todo) {
             var divView = this.todoItemTemplate.clone();
-            divView.find("label").text(todo.title);
+            divView.data("id", todo.id);
+            divView.find("label").text(todo.title).on("dblclick", function () {
+                var label = $(this);
+                var id = label.parent().data("id");
+                label.hide();
+                label.parent().find(".edit-input").val(label.text()).show();
+            });
+            divView.find(".edit-input").on("blur", function () {
+                $(this).hide().parent().find("label").show();
+            });
             var li = $("<li/>");
             li.append(divView);
             li.appendTo(this.todoList);
